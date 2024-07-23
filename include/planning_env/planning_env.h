@@ -48,6 +48,7 @@ class PlanningEnv;
 
 struct planning_env_ns::PlanningEnvParameters
 {
+  int robot_id;
   // Collision check
   double kSurfaceCloudDwzLeafSize;
   double kCollisionCloudDwzLeafSize;
@@ -81,7 +82,7 @@ struct planning_env_ns::PlanningEnvParameters
 class planning_env_ns::PlanningEnv
 {
 public:
-  PlanningEnv(rclcpp::Node::SharedPtr nh, std::string world_frame_id = "map");
+  PlanningEnv(rclcpp::Node::SharedPtr nh);
   ~PlanningEnv() = default;
   double GetPlannerCloudResolution()
   {

@@ -38,6 +38,7 @@ TAREVisualizer::TAREVisualizer(rclcpp::Node::SharedPtr nh)
 }
 bool TAREVisualizer::ReadParameters(rclcpp::Node::SharedPtr nh)
 {
+  nh->get_parameter("robot_id", robot_id);
   nh->get_parameter("kExploringSubspaceMarkerColorGradientAlpha",
                     kExploringSubspaceMarkerColorGradientAlpha);
   nh->get_parameter("kExploringSubspaceMarkerColorMaxAlpha", kExploringSubspaceMarkerColorMaxAlpha);
@@ -63,6 +64,8 @@ bool TAREVisualizer::ReadParameters(rclcpp::Node::SharedPtr nh)
   kLocalPlanningHorizonSizeY = viewpoint_num_y * viewpoint_resolution_y;
   nh->get_parameter("kGridWorldCellHeight", kGlobalSubspaceHeight);
   nh->get_parameter("kLocalPlanningHorizonHeight", kLocalPlanningHorizonSizeZ);
+
+  kWorldFrameID = "robot_" + std::to_string(robot_id) + "/map";
 
   return true;
 }

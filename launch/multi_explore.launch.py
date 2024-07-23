@@ -14,10 +14,6 @@ def launch_tare_node(context: LaunchContext, robot_id):
         executable='tare_planner_node',
         name='tare_planner_node',
         output='screen',
-        # remappings=[
-        #     ('/tf', 'tf'),
-        #     ('/tf_static', 'tf_static'),
-        # ],
         parameters=[os.path.join(get_package_share_directory('tare_planner'), 'config', 'multi_' + id_str + '.yaml')]
     )
     return [tare_planner_node]
@@ -28,10 +24,6 @@ def launch_rviz_node(context: LaunchContext, robot_id):
         package='rviz2',
         executable='rviz2',
         name='tare_planner_rviz',
-        # remappings=[
-        #     ('/tf', 'tf'),
-        #     ('/tf_static', 'tf_static'),
-        # ],
         arguments=[
             '-d', os.path.join(get_package_share_directory('tare_planner'), 'rviz', 'multi_' + id_str + '.rviz')],
         output='screen',
@@ -53,7 +45,6 @@ def generate_launch_description():
     )
     
     return LaunchDescription([
-        # OpaqueFunction(function=push_namespace, args=[robot_id]),
         declare_robot_id,
         OpaqueFunction(function=launch_rviz_node, args=[robot_id]),
         OpaqueFunction(function=launch_tare_node, args=[robot_id])

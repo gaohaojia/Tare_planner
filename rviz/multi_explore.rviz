@@ -61,7 +61,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/keypose_graph_cloud
+            Value: /keypose_graph_cloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
@@ -76,7 +76,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/keypose_graph_edge_marker
+            Value: /keypose_graph_edge_marker
           Value: false
         - Class: rviz_default_plugins/Marker
           Enabled: true
@@ -89,7 +89,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/tare_visualizer/exploring_subspaces
+            Value: /tare_visualizer/exploring_subspaces
           Value: true
         - Alpha: 1
           Buffer Length: 1
@@ -117,7 +117,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/global_path
+            Value: /global_path
           Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: false
@@ -149,7 +149,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/planner_cloud
+            Value: /planner_cloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
@@ -183,7 +183,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/overall_map
+            Value: /overall_map
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
@@ -217,7 +217,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/explored_areas
+            Value: /explored_areas
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
@@ -232,7 +232,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/navigation_boundary
+            Value: /navigation_boundary
           Value: false
       Enabled: true
       Name: Global
@@ -249,7 +249,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/tare_visualizer/local_planning_horizon
+            Value: /tare_visualizer/local_planning_horizon
           Value: true
         - Alpha: 0.5
           Autocompute Intensity Bounds: false
@@ -281,7 +281,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/viewpoint_vis_cloud
+            Value: /viewpoint_vis_cloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
@@ -315,7 +315,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/selected_viewpoint_vis_cloud
+            Value: /selected_viewpoint_vis_cloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
@@ -349,7 +349,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/lookahead_point_cloud
+            Value: /lookahead_point_cloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
@@ -379,7 +379,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/local_path
+            Value: /local_path
           Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: true
@@ -411,7 +411,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/uncovered_cloud
+            Value: /uncovered_cloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
@@ -445,7 +445,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/uncovered_frontier_cloud
+            Value: /uncovered_frontier_cloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
@@ -462,14 +462,14 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/local_way_point
+            Value: /local_way_point
           Value: true
         - Class: rviz_default_plugins/Axes
           Enabled: true
           Length: 4
           Name: Vehicle
           Radius: 0.4000000059604645
-          Reference Frame: robot_0/sensor
+          Reference Frame: sensor
           Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: true
@@ -501,7 +501,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/free_paths
+            Value: /free_paths
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
@@ -531,14 +531,14 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /robot_0/path
+            Value: /path
           Value: false
       Enabled: true
       Name: Local
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
-    Fixed Frame: map
+    Fixed Frame: local_map
     Frame Rate: 15
   Name: root
   Tools:
@@ -558,14 +558,14 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /robot_0/initialpose
+        Value: /initialpose
     - Class: rviz_default_plugins/SetGoal
       Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /robot_0/move_base_simple/goal
+        Value: /move_base_simple/goal
     - Class: rviz_default_plugins/PublishPoint
       Single click: true
       Topic:
@@ -573,7 +573,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /robot_0/clicked_point
+        Value: /clicked_point
   Transformation:
     Current:
       Class: rviz_default_plugins/TF
@@ -597,7 +597,7 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.009999999776482582
       Pitch: 1.5697963237762451
-      Target Frame: map
+      Target Frame: local_map
       Value: XYOrbit (rviz)
       Yaw: 3.140395164489746
     Saved: ~

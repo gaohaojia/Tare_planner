@@ -37,7 +37,6 @@ public:
   void PublishMarkers();
 
 private:
-  int robot_id;
   std::string kWorldFrameID;
   bool kExploringSubspaceMarkerColorGradientAlpha;
   double kExploringSubspaceMarkerColorMaxAlpha;

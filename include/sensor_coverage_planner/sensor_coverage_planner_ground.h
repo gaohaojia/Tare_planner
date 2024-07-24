@@ -62,6 +62,7 @@ namespace sensor_coverage_planner_3d_ns {
 typedef pcl::PointXYZRGBNormal PlannerCloudPointType;
 typedef pcl::PointCloud<PlannerCloudPointType> PlannerCloudType;
 typedef misc_utils_ns::Timer Timer;
+const std::string kWorldFrameID = "local_map";
 
 class SensorCoveragePlanner3D : public rclcpp::Node {
 public:
@@ -71,8 +72,6 @@ public:
   ~SensorCoveragePlanner3D() = default;
 
 private:
-	int robot_id;
-	std::string kWorldFrameID;
   // Parameters
   // String
   std::string sub_start_exploration_topic_;

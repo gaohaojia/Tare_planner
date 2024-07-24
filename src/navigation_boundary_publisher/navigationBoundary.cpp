@@ -15,7 +15,6 @@ using namespace std;
 
 // const double PI = 3.1415926;
 
-int robot_id = 0;
 string boundary_file_dir;
 bool sendBoundary = true;
 int sendBoundaryInterval = 2;
@@ -92,19 +91,17 @@ int main(int argc, char** argv)
   rclcpp::init(argc, argv);
   rclcpp::Node::SharedPtr nh = rclcpp::Node::make_shared("navigationBoundary");
 
-  nh->declare_parameter<int>("robot_id", 0);
   nh->declare_parameter<std::string>("boundary_file_dir", "");
   nh->declare_parameter<bool>("sendBoundary", false);
   nh->declare_parameter<int>("sendBoundaryInterval", 2);
 
-  nh->get_parameter("robot_id", robot_id);
   nh->get_parameter("boundary_file_dir", boundary_file_dir);
   nh->get_parameter("sendBoundary", sendBoundary);
   nh->get_parameter("sendBoundaryInterval", sendBoundaryInterval);
 
   auto pubBoundary = nh->create_publisher<geometry_msgs::msg::PolygonStamped>("navigation_boundary", 5);
   geometry_msgs::msg::PolygonStamped boundaryMsgs;
-  boundaryMsgs.header.frame_id = "robot_" + std::to_string(robot_id) + "/map";
+  boundaryMsgs.header.frame_id = "local_map";
 
   // read boundary from file
   if (sendBoundary)

@@ -16,7 +16,6 @@ namespace planning_env_ns
 {
 void PlanningEnvParameters::ReadParameters(rclcpp::Node::SharedPtr nh)
 {
-  nh->get_parameter("robot_id", robot_id);
   nh->get_parameter("kSurfaceCloudDwzLeafSize", kSurfaceCloudDwzLeafSize);
   nh->get_parameter("kCollisionCloudDwzLeafSize", kCollisionCloudDwzLeafSize);
   nh->get_parameter("keypose_graph/kAddEdgeCollisionCheckRadius", kKeyposeGraphCollisionCheckRadius);
@@ -45,15 +44,13 @@ void PlanningEnvParameters::ReadParameters(rclcpp::Node::SharedPtr nh)
   kExtractFrontierRange.z() = 2;
 }
 
-PlanningEnv::PlanningEnv(rclcpp::Node::SharedPtr nh)
+PlanningEnv::PlanningEnv(rclcpp::Node::SharedPtr nh, const std::string world_frame_id)
   : keypose_cloud_count_(0)
   , robot_position_update_(false)
   , vertical_surface_extractor_()
   , vertical_frontier_extractor_()
 {
   parameters_.ReadParameters(nh);
-
-  std::string world_frame_id = "robot_" + std::to_string(parameters_.robot_id) + "/map";
 
   keypose_cloud_stack_.resize(parameters_.kKeyposeCloudStackNum);
   for (int i = 0; i < keypose_cloud_stack_.size(); i++)

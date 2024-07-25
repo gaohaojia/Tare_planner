@@ -552,7 +552,7 @@ void SensorCoveragePlanner3D::ResetWaypointCallback(
 void SensorCoveragePlanner3D::SendInitialWaypoint()
 {
   // send waypoint ahead
-  double lx = 12.0;
+  double lx = 5.0;
   double ly = 0.0;
   double dx = cos(robot_yaw_) * lx - sin(robot_yaw_) * ly;
   double dy = sin(robot_yaw_) * lx + cos(robot_yaw_) * ly;

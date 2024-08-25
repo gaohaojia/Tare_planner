@@ -1,4 +1,3 @@
-
 tare_planner_node:
   ros__parameters:
     # 是否自动开始

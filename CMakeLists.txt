@@ -34,7 +34,7 @@ find_package(Eigen3 REQUIRED)
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
   include
-  or-tools/include
+  or-tools/${CMAKE_SYSTEM_PROCESSOR}/include
   ${EIGEN3_INCLUDE_DIR}
   /opt/ros/humble/include
   # /usr/local/include
@@ -50,7 +50,7 @@ endforeach()
 # link_directories(
 #   /usr/local/lib # Location when using 'make system_install'
 #   /usr/lib       # More usual location (e.g. when installing using a package)
-#   or-tools/lib
+#   or-tools/${CMAKE_SYSTEM_PROCESSOR}/lib
 # )
 
 add_library(lidar_model src/lidar_model/lidar_model.cpp)
@@ -71,7 +71,7 @@ ament_target_dependencies(pointcloud_utils rclcpp std_msgs nav_msgs geometry_msg
 
 add_library(tsp_solver src/tsp_solver/tsp_solver.cpp)
 ament_target_dependencies(tsp_solver rclcpp std_msgs nav_msgs geometry_msgs sensor_msgs tf2_ros tf2_geometry_msgs tf2)
-target_link_libraries(tsp_solver ${catkin_LIBRARIES} ${CMAKE_CURRENT_SOURCE_DIR}/or-tools/lib/libortools.so)
+target_link_libraries(tsp_solver ${catkin_LIBRARIES} ${CMAKE_CURRENT_SOURCE_DIR}/or-tools/${CMAKE_SYSTEM_PROCESSOR}/lib/libortools.so)
 
 add_library(viewpoint src/viewpoint/viewpoint.cpp)
 ament_target_dependencies(viewpoint rclcpp std_msgs nav_msgs geometry_msgs sensor_msgs tf2_ros tf2_geometry_msgs tf2)
